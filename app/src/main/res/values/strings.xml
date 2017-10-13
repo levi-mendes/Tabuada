@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Tabuada</string>
+    <string name="informe_o_n_mero">Informe o número</string>
+    <string name="informe_um_numero">informe um numero</string>
+</resources>
