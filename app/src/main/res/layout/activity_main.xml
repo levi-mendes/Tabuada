@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.levimendes.tabuada.MainActivity"
+    tools:context="levimendes.tabuada.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
     <Button
@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/tilNumero"
         android:layout_width="272dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
