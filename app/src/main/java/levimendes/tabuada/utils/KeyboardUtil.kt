@@ -7,10 +7,8 @@ import android.view.inputmethod.InputMethodManager
 /**
  * Created by levimendes on 13/10/2017.
  */
-class KeyboardUtil {
 
-    fun hideKeyboard(ac: Activity) {
-        val inp: InputMethodManager = ac.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inp.hideSoftInputFromWindow(ac.currentFocus.windowToken, InputMethodManager.SHOW_FORCED)
-    }
+fun hideKeyboard(ac: Activity) {
+    val inp: InputMethodManager = ac.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    inp.hideSoftInputFromWindow(ac.currentFocus.windowToken, InputMethodManager.SHOW_FORCED)
 }

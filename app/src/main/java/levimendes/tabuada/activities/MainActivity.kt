@@ -1,13 +1,12 @@
 package levimendes.tabuada.activities
 
 import android.os.Bundle
+import android.support.v7.widget.Toolbar
 import android.widget.TextView
-import android.widget.Toast.LENGTH_SHORT
-import android.widget.Toast.makeText
 import levimendes.tabuada.beans.Tabuada
 import kotlinx.android.synthetic.main.activity_main.*
 import levimendes.tabuada.R
-import levimendes.tabuada.utils.KeyboardUtil
+import levimendes.tabuada.utils.hideKeyboard
 
 class MainActivity : BaseActivity() {
 
@@ -15,7 +14,11 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
         btOk.setOnClickListener { validar() }
+        clMainActivity.setOnClickListener { hideKeyboard(this) }
     }
 
     /**
@@ -23,7 +26,11 @@ class MainActivity : BaseActivity() {
      */
     fun addLinha(t: Tabuada) {
         var tvLinha = TextView(this)
-        tvLinha.textSize
+        tvLinha.textSize = 20f
+
+        //var layoutParams = LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
+        //layoutParams.gravity = Gravity.CENTER
+        //tvLinha.layoutParams = layoutParams
 
         tvLinha.text = t.toString()
         llConteudoTabuada.addView(tvLinha)
@@ -57,8 +64,6 @@ class MainActivity : BaseActivity() {
             multiplicador++
         }
 
-        KeyboardUtil().hideKeyboard(this)
+        hideKeyboard(this)
     }
-
-    fun showToast(s: String) = makeText(this, s, LENGTH_SHORT).show()
 }
