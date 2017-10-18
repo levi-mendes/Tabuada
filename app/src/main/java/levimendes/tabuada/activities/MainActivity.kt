@@ -1,14 +1,15 @@
-package levimendes.tabuada
+package levimendes.tabuada.activities
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast.LENGTH_SHORT
 import android.widget.Toast.makeText
 import levimendes.tabuada.beans.Tabuada
 import kotlinx.android.synthetic.main.activity_main.*
+import levimendes.tabuada.R
+import levimendes.tabuada.utils.KeyboardUtil
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +56,8 @@ class MainActivity : AppCompatActivity() {
             addLinha(Tabuada(multiplicador, multiplicando))
             multiplicador++
         }
+
+        KeyboardUtil().hideKeyboard(this)
     }
 
     fun showToast(s: String) = makeText(this, s, LENGTH_SHORT).show()
