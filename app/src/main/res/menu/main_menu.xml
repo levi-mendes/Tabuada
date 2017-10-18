@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/itemInicio"
-        android:icon="@android:drawable/ic_menu_upload"
+        android:id="@+id/itemProfile"
+        android:icon="@android:drawable/ic_dialog_info"
         app:showAsAction="always"
         android:title="Inicio" />
 
