@@ -16,9 +16,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(findViewById(R.id.toolbar))
 
         btOk.setOnClickListener { validar() }
         clMainActivity.setOnClickListener { hideKeyboard(this) }
@@ -40,8 +38,6 @@ class MainActivity : BaseActivity() {
         llConteudoTabuada.addView(tvLinha)
     }
 
-    private fun numero() : Int = etNumero.text.toString().toInt()
-
     private fun validar() : Boolean {
 
         if (etNumero.text.isEmpty()) {
@@ -59,7 +55,7 @@ class MainActivity : BaseActivity() {
     private fun montarTabuada() {
         llConteudoTabuada.removeAllViews()
 
-        val multiplicando = numero()
+        val multiplicando: Int = etNumero.text.toString().toInt()
         var multiplicador = 0
 
         //adiciona uma linha para cada multiplicador
